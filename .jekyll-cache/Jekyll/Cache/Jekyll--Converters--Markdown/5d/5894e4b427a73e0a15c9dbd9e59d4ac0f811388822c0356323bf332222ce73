@@ -1,0 +1,53 @@
+I"<p>I was playing with the idea of using Bourbon Neat to create a semantic grid but when it comes down to it I’m familiar with Zurb and I like how it works.</p>
+
+<p>I make a decent amount of sites for friends and non-profits and the benefits of Zurbs rapid prototyping are worth it for me.</p>
+
+<p>That being said, I use very little of Zurb’s stuff so for now I’m just starting with the grid and visibility classes. Here’s how I did it.</p>
+
+<h3 id="with-compass">With Compass</h3>
+<p>This is an update to my original post since I’ve started using Compass. If you don’t use Compass you can still follow the instructions in the ‘Without Compass’ section.</p>
+
+<ul>
+  <li>clone the bower-foundation repo into your _sass directory
+<code class="language-plaintext highlighter-rouge">git clone git@github.com:zurb/bower-foundation.git</code></li>
+  <li>create a new subdirectory in your _sass directory called <code class="language-plaintext highlighter-rouge">foundation</code></li>
+  <li>copy the contents of <code class="language-plaintext highlighter-rouge">bower-foundation/scss/foundation</code> to your new subdirectory
+    <ul>
+      <li>this should include <code class="language-plaintext highlighter-rouge">_functions.scss</code>, <code class="language-plaintext highlighter-rouge">_settings.scss</code>, and a directory named <code class="language-plaintext highlighter-rouge">components</code></li>
+    </ul>
+  </li>
+  <li>You can now @import any of the zurb scss stuff from your <code class="language-plaintext highlighter-rouge">css/main.scss</code> file. For now I’m just importing the grid and visibility:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import "foundation/components/grid";
+@import "foundation/components/visibility";
+</code></pre></div></div>
+
+<ul>
+  <li>Note - grid will automatically @import <code class="language-plaintext highlighter-rouge">foundation/components/global</code> which @imports `foundation/components/fuctions</li>
+</ul>
+
+<h3 id="without-compass">Without Compass</h3>
+<p>Here’s the first way I did it, before I integrated compass into my Jekyll site.</p>
+
+<ul>
+  <li>Create a folder in your _sass directory called ‘foundation’</li>
+  <li>Git clone the ‘bower_foundation’ repo anywhere on your computer
+<code class="language-plaintext highlighter-rouge">git clone git@github.com:zurb/bower-foundation.git</code></li>
+  <li>Copy the contents of <code class="language-plaintext highlighter-rouge">bower-foundation/scss/foundation/components/</code> to the <code class="language-plaintext highlighter-rouge">_sass/foundation</code> directory you created in step 1.</li>
+  <li>Copy <code class="language-plaintext highlighter-rouge">bower-foundation/scss/foundation/_functions.scss</code> to the <code class="language-plaintext highlighter-rouge">_sass/foundation</code> directory.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">_sass/foundation/global.scss</code> and edit the <code class="language-plaintext highlighter-rouge">@import ../"functions";</code> line to read <code class="language-plaintext highlighter-rouge">@import "functions"</code> since we moved it into the same directory.</li>
+  <li>Delete the <code class="language-plaintext highlighter-rouge">bower-foundation</code> directory, you don’t need it anymore.</li>
+  <li>You can now @import any of the zurb scss stuff from your <code class="language-plaintext highlighter-rouge">css/main.scss</code> file. For now I’m just importing the grid and visibility:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import "foundation/grid";
+@import "foundation/visibility";
+</code></pre></div></div>
+
+<ul>
+  <li>Note - grid will automatically @import <code class="language-plaintext highlighter-rouge">foundation/global</code> which @imports <code class="language-plaintext highlighter-rouge">foundation/fuctions</code></li>
+</ul>
+
+<p>That’s it. Now you have access to Zurb’s grid without any of the JS or other crap that you don’t need. You can update at any time by replacing the contents of <code class="language-plaintext highlighter-rouge">_sass/foundation</code> with the newest files from the zurb <code class="language-plaintext highlighter-rouge">bower-foundation</code> repo.</p>
+:ET

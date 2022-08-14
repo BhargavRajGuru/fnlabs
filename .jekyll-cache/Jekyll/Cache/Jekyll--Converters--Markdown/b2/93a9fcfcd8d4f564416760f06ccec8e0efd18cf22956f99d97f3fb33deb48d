@@ -1,0 +1,13 @@
+I"c<p>Includes the following custom tasks:</p>
+
+<ul>
+  <li><em>notify</em> - pings google and bing to notify them about changes to the site/sitemap</li>
+</ul>
+
+<p>These 3 tasks have been bundled into custom build and deploy tasks</p>
+
+<ul>
+  <li><em>build</em> - runs <code class="language-plaintext highlighter-rouge">jekyll build</code> followed by <code class="language-plaintext highlighter-rouge">minify_html</code></li>
+  <li><em>deploy</em> - runs <code class="language-plaintext highlighter-rouge">s3_website push</code> and then <code class="language-plaintext highlighter-rouge">notify</code></li>
+</ul>
+:ET
